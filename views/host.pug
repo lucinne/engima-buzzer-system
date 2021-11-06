@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title='Enigma Host Panel'
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel="stylesheet" href='/style.css')
+  body
+    header
+    div.container
+
+      img(src="/enigma.png" class="main-image")
+      h2="Host Panel."
+      h2.js-active=`Number of participants: ${users.length}`
+      ol.js-buzzes
+        each buzz in buzzes
+          li=`${buzz.name} on Team ${buzz.team}`
+      button.js-clear='Clear all!'
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/host.js')

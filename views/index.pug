@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title='Enigma Buzzer System'
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:500,700|Roboto:400,500,700,900")
+    link(rel="stylesheet" href='/style.css')
+  body.js-body
+    header
+    div.container
+      form.view.js-join
+        img(src="/enigma.png" class="main-image")
+        h2="Welcome to Scientist's Enigma 4.0!"
+        input(type='text' name='name' placeholder='Your name' required='required')
+        input(type='text' name='team' placeholder='Your team name' required='required')
+        button(type='submit')='Join the round!'
+
+      div.view.js-joined.hidden
+        button.js-buzzer.buzzer()='PRESS!'
+        p.js-joined-info=""
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/join.js')
